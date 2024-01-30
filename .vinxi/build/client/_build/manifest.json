@@ -1,0 +1,74 @@
+{
+  "\u0000virtual:#vinxi/handler/client.css": {
+    "file": "assets/client-14fbb1d0.css",
+    "src": "\u0000virtual:#vinxi/handler/client.css"
+  },
+  "_action-f4c99130.js": {
+    "file": "assets/action-f4c99130.js",
+    "imports": [
+      "_web-cfb96051.js",
+      "_routing-96fb575a.js"
+    ]
+  },
+  "_routing-96fb575a.js": {
+    "file": "assets/routing-96fb575a.js",
+    "imports": [
+      "_web-cfb96051.js"
+    ]
+  },
+  "_web-cfb96051.js": {
+    "file": "assets/web-cfb96051.js"
+  },
+  "node_modules/shikiji/dist/onig.wasm": {
+    "file": "assets/onig-fd885c2d.wasm",
+    "src": "node_modules/shikiji/dist/onig.wasm"
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "assets/_...404_-2622a4c2.js",
+    "imports": [
+      "_web-cfb96051.js",
+      "_routing-96fb575a.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css"
+  },
+  "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css": {
+    "file": "assets/index-edf9667a.js",
+    "imports": [
+      "_web-cfb96051.js",
+      "_action-f4c99130.js",
+      "_routing-96fb575a.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css"
+  },
+  "src/routes/index.tsx?pick=default&pick=$css": {
+    "file": "assets/index-7209dd47.js",
+    "imports": [
+      "_web-cfb96051.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/index.tsx?pick=default&pick=$css"
+  },
+  "virtual:#vinxi/handler/client": {
+    "css": [
+      "assets/client-14fbb1d0.css"
+    ],
+    "dynamicImports": [
+      "src/routes/[...404].tsx?pick=default&pick=$css",
+      "src/routes/index.tsx?pick=default&pick=$css",
+      "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css"
+    ],
+    "file": "assets/client-d468c1d7.js",
+    "imports": [
+      "_web-cfb96051.js",
+      "_routing-96fb575a.js",
+      "_action-f4c99130.js"
+    ],
+    "isEntry": true,
+    "src": "virtual:#vinxi/handler/client"
+  }
+}

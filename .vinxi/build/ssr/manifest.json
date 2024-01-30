@@ -1,0 +1,64 @@
+{
+  "\u0000virtual:#vinxi/handler/ssr.css": {
+    "file": "assets/ssr-14fbb1d0.css",
+    "src": "\u0000virtual:#vinxi/handler/ssr.css"
+  },
+  "_action-c7cb9b20.js": {
+    "file": "assets/action-c7cb9b20.js",
+    "imports": [
+      "_routing-d4b2a578.js"
+    ]
+  },
+  "_routing-d4b2a578.js": {
+    "file": "assets/routing-d4b2a578.js"
+  },
+  "node_modules/shikiji/dist/onig.wasm": {
+    "file": "assets/onig-fd885c2d.wasm",
+    "src": "node_modules/shikiji/dist/onig.wasm"
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "_...404_.js",
+    "imports": [
+      "_routing-d4b2a578.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css"
+  },
+  "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css": {
+    "file": "index2.js",
+    "imports": [
+      "_action-c7cb9b20.js",
+      "_routing-d4b2a578.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css"
+  },
+  "src/routes/index.tsx?pick=default&pick=$css": {
+    "file": "index.js",
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/index.tsx?pick=default&pick=$css"
+  },
+  "virtual:#vinxi/handler/ssr": {
+    "css": [
+      "assets/ssr-14fbb1d0.css"
+    ],
+    "dynamicImports": [
+      "src/routes/[...404].tsx?pick=default&pick=$css",
+      "src/routes/[...404].tsx?pick=default&pick=$css",
+      "src/routes/index.tsx?pick=default&pick=$css",
+      "src/routes/index.tsx?pick=default&pick=$css",
+      "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css",
+      "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css"
+    ],
+    "file": "ssr.js",
+    "imports": [
+      "_action-c7cb9b20.js",
+      "_routing-d4b2a578.js"
+    ],
+    "isEntry": true,
+    "src": "virtual:#vinxi/handler/ssr"
+  }
+}
