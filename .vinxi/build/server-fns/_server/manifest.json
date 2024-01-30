@@ -1,20 +1,6 @@
 {
-  "_middleware.js": {
-    "file": "middleware.js"
-  },
-  "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css": {
-    "file": "c_9877.js",
-    "imports": [
-      "_middleware.js"
-    ],
-    "isEntry": true,
-    "src": "src/routes/auth/sign-up/index.tsx?pick=default&pick=$css"
-  },
   "virtual:#vinxi/handler/server-fns": {
     "file": "entry.js",
-    "imports": [
-      "_middleware.js"
-    ],
     "isEntry": true,
     "src": "virtual:#vinxi/handler/server-fns"
   }

@@ -5,7 +5,8 @@ export default function Nav() {
     <nav class="bg-violet-800">
       <ul class="container flex items-center p-3 text-gray-200">
         <NavLink text={"Home"} path={"/"} />
-        <NavLink text={"Sign-up"} path={"/auth/sign-up"} />
+        <NavLink text={"Register"} path={"/auth/sign-up"} />
+        <NavLink text={"Login"} path={"/auth/sign-in"} />
       </ul>
     </nav>
   );

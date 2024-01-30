@@ -1,19 +1,11 @@
-import { action, useAction } from "@solidjs/router";
+import { Button } from "@/components/ui/button";
+import { TextField, TextFieldInput } from "@/components/ui/textfield";
 import { createSignal } from "solid-js";
 
-interface SignUpProps {
-  email: string;
-  password: string;
-}
-// const onSignUp = action(async (formData: FormData) => {
-//   "use server";
-//
-//   console.log({ values: formData.values() });
-// });
-
-const URL = process.env.NODE_ENV === "development"
-  ? `http://localhost:5000/api/users/sign-up`
-  : `https://ticketing.dev/api/users/sign-up`;
+const URL =
+  process.env.NODE_ENV === "development"
+    ? `http://localhost:5000/api/users/sign-up`
+    : `https://ticketing.dev/api/users/sign-up`;
 
 export default function SignUpPage() {
   const [password, setPassword] = createSignal("");
@@ -34,42 +26,34 @@ export default function SignUpPage() {
     console.log(result);
   };
   return (
-    <main class="mx-auto p-4">
-      <div class="flex flex-col">
-        <h1>Sign up</h1>
-        <form onSubmit={onSignUp} method="post">
-          {/* INPUT --- EMAIL */}
-          <div class="flex flex-col items-start bg-zinc-200 my-2 py-2">
-            <label>Email</label>
-            <input
-              class="px-3 py-2 bg-slate-300 rounded-md w-full"
-              value={email()}
-              name="email"
-              type="email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-                // checkInput();
-              }}
-            />
-          </div>
+    <main class="mx-auto max-w-md flex flex-col gap-12 text-center p-4">
+      <h1>Sign up</h1>
+      <form
+        class="flex flex-col gap-2 max-w-md"
+        onSubmit={onSignUp}
+        method="post"
+      >
+        <TextField>
+          <TextFieldInput
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+          />
+        </TextField>
 
-          {/* INPUT --- PASSWORD */}
-          <div class="flex flex-col items-start bg-zinc-200 my-2 py-2">
-            <label>Password</label>
-            <input
-              class="px-3 py-2  bg-slate-300 rounded-md w-full"
-              value={password()}
-              name="password"
-              type="password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-                // checkInput();
-              }}
-            />
-          </div>
-          <button aria-label={`Sign-up for Ticketing.`}>Submit</button>
-        </form>
-      </div>
+        <TextField>
+          <TextFieldInput
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Password123"
+          />
+        </TextField>
+
+        <Button type="submit" size={"lg"} variant={"default"}>
+          Submit
+        </Button>
+      </form>
+      <p class="muted">farewell,</p>
     </main>
   );
 }
