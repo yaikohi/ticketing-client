@@ -5,7 +5,9 @@ dist
 .netlify
 netlify
 .vinxi
-
+/.vinxi
+.git
+/.git
 # Environment
 .env
 .env*.local
