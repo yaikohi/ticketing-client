@@ -1,13 +1,17 @@
 import { useLocation } from "@solidjs/router";
+import { AuthenticationModal } from "./authentication-modal";
 
 export default function Nav() {
   return (
-    <nav class="bg-violet-800">
-      <ul class="container flex items-center p-3 text-gray-200">
+    <nav class="bg-secondary container flex items-center justify-between">
+      <ul class="container flex items-center p-3">
         <NavLink text={"Home"} path={"/"} />
-        <NavLink text={"Register"} path={"/auth/sign-up"} />
-        <NavLink text={"Login"} path={"/auth/sign-in"} />
       </ul>
+      <div class="">
+        {/* @TODO: Check if user is logged-in*/}
+        <AuthenticationModal purpose={"sign-up"} />
+        <AuthenticationModal purpose={"sign-in"} />
+      </div>
     </nav>
   );
 }

@@ -1,16 +1,17 @@
 // @refresh reload
 import { Router } from "@solidjs/router";
-import { FileRoutes } from "@solidjs/start";
+import { clientOnly, FileRoutes } from "@solidjs/start";
 import { Suspense } from "solid-js";
-import Nav from "@/components/Nav";
 import "./app.css";
+
+const ClientSideNav = clientOnly(() => import("@/components/nav"));
 
 export default function App() {
   return (
     <Router
       root={(props) => (
         <>
-          <Nav />
+          <ClientSideNav />
           <Suspense>{props.children}</Suspense>
         </>
       )}

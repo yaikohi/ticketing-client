@@ -10,5 +10,6 @@ export default defineConfig({
     server: {
       // NITRO SETTINGS
     },
+    // middleware: "./src/middleware/mw.ts",
   },
 });
