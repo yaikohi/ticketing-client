@@ -1,1 +1,0 @@
-import{ssr as t,ssrHydrationKey as e}from"solid-js/web";var n=["<main",' class="text-center mx-auto p-4"><h1 class="font-bold text-sky-700">Ticketing client</h1></main>'];function s(){return t(n,e())}export{s as default};
