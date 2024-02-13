@@ -7,7 +7,7 @@ export default function Nav() {
       <ul class="container flex items-center p-3">
         <NavLink text={"Home"} path={"/"} />
       </ul>
-      <div class="">
+      <div class="flex flex-row gap-4">
         {/* @TODO: Check if user is logged-in*/}
         <AuthenticationModal purpose={"sign-up"} />
         <AuthenticationModal purpose={"sign-in"} />

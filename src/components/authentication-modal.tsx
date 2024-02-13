@@ -37,30 +37,26 @@ async function authenticate({
   email: string;
   password: string;
 }): Promise<any> {
-  const response = await fetch(`/api/authenticate`, {
-    method: "POST",
-    body: JSON.stringify({
-      purpose,
-      email,
-      password,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log({ response });
-  const result = await response.json();
+  try {
+    const response = await fetch(`/api/authenticate`, {
+      method: "POST",
+      body: JSON.stringify({
+        purpose,
+        email,
+        password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const result = await response.json();
 
-  // if (!result.ok) {
-  //   console.log({ result });
-  // }
-
-  return result;
+    return result;
+  } catch (err) {
+    console.error({ err });
+    return;
+  }
 }
-
-// async function getCurrentUser(): Promise<any> {
-//   return await (await fetch(`/api/current-user`)).json();
-// }
 
 // ---- COMPONENT
 export function AuthenticationModal({
@@ -78,8 +74,6 @@ export function AuthenticationModal({
     message: "",
   });
 
-  // const [currentUser] = createResource(getCurrentUser);
-
   const onSubmit = async (event: Event) => {
     event.preventDefault();
     const { email, password } = auth;
@@ -88,9 +82,8 @@ export function AuthenticationModal({
     console.log({ res });
     setResult(res);
   };
-  // createEffect(() => console.log(currentUser()));
   return (
-    <div class="w-max">
+    <div class="w-max p-2">
       <Dialog>
         <DialogTrigger>{AuthConfigTable[purpose].title}</DialogTrigger>
         <DialogContent>

@@ -4,6 +4,7 @@ import { getAuthServiceUrl } from "@/lib/utils";
 import { redirect } from "@solidjs/router";
 import { useSession } from "vinxi/http";
 import { getRequestEvent } from "solid-js/web";
+import { logger } from "./logger";
 
 interface IUser {
   id: string;
@@ -34,7 +35,7 @@ export async function authenticate({
 }): Promise<any> {
   "use server";
   const URL = getAuthServiceUrl({ purpose });
-  console.log(`Fetching data from /users/${purpose}`);
+  logger.debug(`Fetching data from /users/${purpose}`);
 
   const response = await fetch(URL, {
     method: "POST",
@@ -47,24 +48,24 @@ export async function authenticate({
     },
     credentials: "include",
   });
-  console.log("getting session");
+  logger.debug("getting session");
 
   const session = await getSession();
-  console.log("parsing json from response");
+  logger.debug("parsing json from response");
 
   const result = await response.json();
-  console.log("updating session");
+  logger.debug("updating session");
 
   await session.update((
     d: UserSession,
   ) => {
-    console.dir({ headers: response.headers });
+    logger.debug({ headers: response.headers });
     const token = response.headers.get("Authorization") as SessionToken;
 
-    console.log({ token });
+    logger.debug({ token });
     d.token = token;
   });
-  console.dir({ result });
+  logger.debug({ result });
   return result;
 }
 
@@ -74,17 +75,16 @@ export async function getCurrentUser(): Promise<
   "use server";
   const URL = getAuthServiceUrl({ purpose: "current-user" });
   const bearerToken = (await getSession()).data.token as UserSession;
-  // console.log({ bearerToken });
 
   if (!bearerToken) {
-    console.log("Sign in first.");
+    logger.info("Sign in first.");
     return;
   }
   const response = await fetch(URL, {
     method: "GET",
     headers: { "authorization": `${bearerToken}` },
   });
-  // console.dir({ response });
+  logger.debug({ response });
   const user = await response.json();
   return user;
 }
